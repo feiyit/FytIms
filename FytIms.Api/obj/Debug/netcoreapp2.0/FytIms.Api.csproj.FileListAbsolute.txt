@@ -1,0 +1,11 @@
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Api.deps.json
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Api.runtimeconfig.json
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Api.runtimeconfig.dev.json
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Api.dll
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Api.pdb
+D:\FuYu\FytIms\FytIms.Api\obj\Debug\netcoreapp2.0\FytIms.Api.csprojResolveAssemblyReference.cache
+D:\FuYu\FytIms\FytIms.Api\obj\Debug\netcoreapp2.0\FytIms.Api.csproj.CoreCompileInputs.cache
+D:\FuYu\FytIms\FytIms.Api\obj\Debug\netcoreapp2.0\FytIms.Api.AssemblyInfoInputs.cache
+D:\FuYu\FytIms\FytIms.Api\obj\Debug\netcoreapp2.0\FytIms.Api.AssemblyInfo.cs
+D:\FuYu\FytIms\FytIms.Api\obj\Debug\netcoreapp2.0\FytIms.Api.dll
+D:\FuYu\FytIms\FytIms.Api\obj\Debug\netcoreapp2.0\FytIms.Api.pdb

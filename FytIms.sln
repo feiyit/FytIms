@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "B-应用服务", "B-应用服务", "{31BEFE8D-3B3B-4F1B-B1B1-8F82A740C777}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A-应用程序", "A-应用程序", "{C996AB94-33E5-456B-B76F-6FF019548D65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C-应用公共类库", "C-应用公共类库", "{D6406782-2D8A-45F9-A452-E2648536B179}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Web", "1-Web", "{2B4EB0EB-780A-44E6-BDE1-FA80F5333AAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FytIms.Api", "FytIms.Api\FytIms.Api.csproj", "{F09DB8F7-02FC-4AB5-9EF0-3976F657AECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FytIms.Core", "FytIms.Core\FytIms.Core.csproj", "{A628F1E1-52B8-4368-96EA-8EB32AB8FB59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FytIms.Common", "FytIms.Common\FytIms.Common.csproj", "{08F87B0F-23E5-453A-B9D1-07C43333D3D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F09DB8F7-02FC-4AB5-9EF0-3976F657AECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F09DB8F7-02FC-4AB5-9EF0-3976F657AECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F09DB8F7-02FC-4AB5-9EF0-3976F657AECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F09DB8F7-02FC-4AB5-9EF0-3976F657AECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A628F1E1-52B8-4368-96EA-8EB32AB8FB59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A628F1E1-52B8-4368-96EA-8EB32AB8FB59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A628F1E1-52B8-4368-96EA-8EB32AB8FB59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A628F1E1-52B8-4368-96EA-8EB32AB8FB59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08F87B0F-23E5-453A-B9D1-07C43333D3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08F87B0F-23E5-453A-B9D1-07C43333D3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08F87B0F-23E5-453A-B9D1-07C43333D3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08F87B0F-23E5-453A-B9D1-07C43333D3D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B4EB0EB-780A-44E6-BDE1-FA80F5333AAD} = {C996AB94-33E5-456B-B76F-6FF019548D65}
+		{F09DB8F7-02FC-4AB5-9EF0-3976F657AECE} = {2B4EB0EB-780A-44E6-BDE1-FA80F5333AAD}
+		{A628F1E1-52B8-4368-96EA-8EB32AB8FB59} = {31BEFE8D-3B3B-4F1B-B1B1-8F82A740C777}
+		{08F87B0F-23E5-453A-B9D1-07C43333D3D2} = {D6406782-2D8A-45F9-A452-E2648536B179}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46EF8EA5-0273-4B9E-B8D8-0C579F38094C}
+	EndGlobalSection
+EndGlobal
