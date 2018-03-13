@@ -16,4 +16,10 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FytIms.Common\FytIms.Common.csproj" />
+    <ProjectReference Include="..\FytIms.Core\FytIms.Core.csproj" />
+    <ProjectReference Include="..\FytIms.Service\FytIms.Service.csproj" />
+  </ItemGroup>
+
 </Project>

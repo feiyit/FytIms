@@ -9,3 +9,9 @@ D:\FuYu\FytIms\FytIms.Api\obj\Debug\netcoreapp2.0\FytIms.Api.AssemblyInfoInputs.
 D:\FuYu\FytIms\FytIms.Api\obj\Debug\netcoreapp2.0\FytIms.Api.AssemblyInfo.cs
 D:\FuYu\FytIms\FytIms.Api\obj\Debug\netcoreapp2.0\FytIms.Api.dll
 D:\FuYu\FytIms\FytIms.Api\obj\Debug\netcoreapp2.0\FytIms.Api.pdb
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Common.dll
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Core.dll
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Service.dll
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Common.pdb
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Core.pdb
+D:\FuYu\FytIms\FytIms.Api\bin\Debug\netcoreapp2.0\FytIms.Service.pdb
