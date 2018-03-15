@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using FytIms.Common.ClientData;
-using FytIms.Core.Model;
+using FytIms.Core.Model.Sys;
 
 namespace FytIms.Service.Interfaces
 {
-    public interface ISysAdminService
+    public interface ISysCodeService
     {
-        Task<ApiResult<List<SysAdmin>>> GetListAsync();
+        Task<ApiResult<List<SysCode>>> GetListAsync();
     }
 }

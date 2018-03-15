@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using FytIms.Core.Model;
+using FytIms.Core.Model.Hr;
+using FytIms.Core.Model.Sys;
 using SqlSugar;
 
 namespace FytIms.Core
@@ -21,7 +23,24 @@ namespace FytIms.Core
             });
         }
         public SqlSugarClient Db;//用来处理事务多表查询和复杂的操作
-        //public DbSet<SysAdmin> SysAdminDb => new DbSet<SysAdmin>(Db);
-        public DbSet<SysAdmin> SysAdminDb { get { return new DbSet<SysAdmin>(Db); } }
+
+        //系统权限设置
+        public DbSet<SysCode> SysCodeDb => new DbSet<SysCode>(Db);
+        public DbSet<SysCodeType> SysCodeTypeDb => new DbSet<SysCodeType>(Db);
+        public DbSet<SysCompany> SysCompanyDb => new DbSet<SysCompany>(Db);
+        public DbSet<SysDepartment> SysDepartmentDb => new DbSet<SysDepartment>(Db);
+        public DbSet<SysImage> SysImageDb => new DbSet<SysImage>(Db);
+        public DbSet<SysLog> SysLogDb => new DbSet<SysLog>(Db);
+        public DbSet<SysMenu> SysMenuDb => new DbSet<SysMenu>(Db);
+        public DbSet<SysPermissions> SysPermissionsDb => new DbSet<SysPermissions>(Db);
+        public DbSet<SysRole> SysRoleDb => new DbSet<SysRole>(Db);
+        public DbSet<SysRoleMenu> SysRoleMenuDb => new DbSet<SysRoleMenu>(Db);
+
+        //人员设置
+        public DbSet<SysPerson> SysPersonDb => new DbSet<SysPerson>(Db);
+        public DbSet<SysPersonContact> SysPersonContactDb => new DbSet<SysPersonContact>(Db);
+        public DbSet<SysPersonEducate> SysPersonEducateDb => new DbSet<SysPersonEducate>(Db);
+        public DbSet<SysPersonSpecialty> SysPersonSpecialtyDb => new DbSet<SysPersonSpecialty>(Db);
+        public DbSet<SysPersonWork> SysPersonWorkDb => new DbSet<SysPersonWork>(Db);
     }
 }

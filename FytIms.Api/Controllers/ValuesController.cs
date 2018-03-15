@@ -10,17 +10,17 @@ namespace FytIms.Api.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        private readonly ISysAdminService _sysAdminService;
+        private readonly ISysCodeService _sysCodeService;
 
-        public ValuesController(ISysAdminService sysAdminService)
+        public ValuesController(ISysCodeService sysCodeService)
         {
-            _sysAdminService = sysAdminService;
+            _sysCodeService = sysCodeService;
         }
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            var res = _sysAdminService.GetListAsync();
+            var res = _sysCodeService.GetListAsync();
             return new string[] { "value1", "value2" };
         }
 
