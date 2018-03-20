@@ -6,11 +6,14 @@ using FytIms.Common.ClientData;
 using FytIms.Core;
 using FytIms.Core.Model;
 using FytIms.Core.Model.Sys;
-using FytIms.Service.Interfaces;
+using FytIms.Service.Interfaces.Sys;
 using SqlSugar;
 
-namespace FytIms.Service.Implements
+namespace FytIms.Service.Implements.Sys
 {
+    /// <summary>
+    /// 字典值实现
+    /// </summary>
     public class SysCodeService : DbContext, ISysCodeService
     {
         public List<SysCode> GetList()
@@ -20,12 +23,13 @@ namespace FytIms.Service.Implements
 
         public async Task<ApiResult<List<SysCode>>> GetListAsync()
         {
-            ApiResult<List<SysCode>> res = new ApiResult<List<SysCode>>
+            var res = new ApiResult<List<SysCode>>
             {
                 statusCode = 200,
                 data = SysCodeDb.GetList()
             };
-            return res;
+            return await Task.Run(() => res);
+;
         }
     }
 }

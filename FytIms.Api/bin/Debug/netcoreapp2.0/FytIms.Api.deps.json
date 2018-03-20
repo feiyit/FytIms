@@ -24,7 +24,6 @@
       "FytIms.Api/1.0.0": {
         "dependencies": {
           "FytIms.Common": "1.0.0",
-          "FytIms.Core": "1.0.0",
           "FytIms.Service": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.5",
           "Microsoft.NETCore.App": "2.0.0"

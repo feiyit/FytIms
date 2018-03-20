@@ -13216,7 +13216,6 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "FytIms.Common >= 1.0.0",
-      "FytIms.Core >= 1.0.0",
       "FytIms.Service >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.5",
       "Microsoft.NETCore.App >= 2.0.0"
@@ -13261,9 +13260,6 @@
             },
             "D:\\FuYu\\FytIms\\FytIms.Service\\FytIms.Service.csproj": {
               "projectPath": "D:\\FuYu\\FytIms\\FytIms.Service\\FytIms.Service.csproj"
-            },
-            "D:\\FuYu\\FytIms\\FytIms.Core\\FytIms.Core.csproj": {
-              "projectPath": "D:\\FuYu\\FytIms\\FytIms.Core\\FytIms.Core.csproj"
             }
           }
         }

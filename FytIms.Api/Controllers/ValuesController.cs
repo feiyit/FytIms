@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FytIms.Service.Interfaces;
+using FytIms.Service.Interfaces.Sys;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FytIms.Api.Controllers
