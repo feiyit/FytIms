@@ -10,6 +10,7 @@
         "dependencies": {
           "FytIms.Common": "1.0.0",
           "FytIms.Core": "1.0.0",
+          "FytIms.Service.Model": "1.0.0",
           "sqlSugarCore": "4.6.4.6"
         },
         "runtime": {
@@ -1377,6 +1378,11 @@
         "runtime": {
           "FytIms.Core.dll": {}
         }
+      },
+      "FytIms.Service.Model/1.0.0": {
+        "runtime": {
+          "FytIms.Service.Model.dll": {}
+        }
       }
     }
   },
@@ -2204,6 +2210,11 @@
       "sha512": ""
     },
     "FytIms.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FytIms.Service.Model/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

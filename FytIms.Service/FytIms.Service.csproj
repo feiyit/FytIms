@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FytIms.Common\FytIms.Common.csproj" />
     <ProjectReference Include="..\FytIms.Core\FytIms.Core.csproj" />
+    <ProjectReference Include="..\FytIms.Service.Model\FytIms.Service.Model.csproj" />
   </ItemGroup>
 
 </Project>

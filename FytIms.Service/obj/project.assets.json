@@ -2192,6 +2192,16 @@
         "runtime": {
           "bin/placeholder/FytIms.Core.dll": {}
         }
+      },
+      "FytIms.Service.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/FytIms.Service.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FytIms.Service.Model.dll": {}
+        }
       }
     }
   },
@@ -7030,12 +7040,18 @@
       "type": "project",
       "path": "../FytIms.Core/FytIms.Core.csproj",
       "msbuildProject": "../FytIms.Core/FytIms.Core.csproj"
+    },
+    "FytIms.Service.Model/1.0.0": {
+      "type": "project",
+      "path": "../FytIms.Service.Model/FytIms.Service.Model.csproj",
+      "msbuildProject": "../FytIms.Service.Model/FytIms.Service.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "FytIms.Common >= 1.0.0",
       "FytIms.Core >= 1.0.0",
+      "FytIms.Service.Model >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "sqlSugarCore >= 4.6.4.6"
     ]
@@ -7074,6 +7090,9 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
+            "D:\\FuYu\\FytIms\\FytIms.Service.Model\\FytIms.Service.Model.csproj": {
+              "projectPath": "D:\\FuYu\\FytIms\\FytIms.Service.Model\\FytIms.Service.Model.csproj"
+            },
             "D:\\FuYu\\FytIms\\FytIms.Common\\FytIms.Common.csproj": {
               "projectPath": "D:\\FuYu\\FytIms\\FytIms.Common\\FytIms.Common.csproj"
             },

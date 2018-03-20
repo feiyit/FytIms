@@ -11,3 +11,5 @@ D:\FuYu\FytIms\FytIms.Service\bin\Debug\netcoreapp2.0\FytIms.Core.dll
 D:\FuYu\FytIms\FytIms.Service\bin\Debug\netcoreapp2.0\FytIms.Core.pdb
 D:\FuYu\FytIms\FytIms.Service\bin\Debug\netcoreapp2.0\FytIms.Common.dll
 D:\FuYu\FytIms\FytIms.Service\bin\Debug\netcoreapp2.0\FytIms.Common.pdb
+D:\FuYu\FytIms\FytIms.Service\bin\Debug\netcoreapp2.0\FytIms.Service.Model.dll
+D:\FuYu\FytIms\FytIms.Service\bin\Debug\netcoreapp2.0\FytIms.Service.Model.pdb

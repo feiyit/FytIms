@@ -1,0 +1,9 @@
+D:\FuYu\FytIms\FytIms.Service.Model\bin\Debug\netcoreapp2.0\FytIms.Service.Model.deps.json
+D:\FuYu\FytIms\FytIms.Service.Model\bin\Debug\netcoreapp2.0\FytIms.Service.Model.dll
+D:\FuYu\FytIms\FytIms.Service.Model\bin\Debug\netcoreapp2.0\FytIms.Service.Model.pdb
+D:\FuYu\FytIms\FytIms.Service.Model\obj\Debug\netcoreapp2.0\FytIms.Service.Model.csproj.CoreCompileInputs.cache
+D:\FuYu\FytIms\FytIms.Service.Model\obj\Debug\netcoreapp2.0\FytIms.Service.Model.AssemblyInfoInputs.cache
+D:\FuYu\FytIms\FytIms.Service.Model\obj\Debug\netcoreapp2.0\FytIms.Service.Model.AssemblyInfo.cs
+D:\FuYu\FytIms\FytIms.Service.Model\obj\Debug\netcoreapp2.0\FytIms.Service.Model.dll
+D:\FuYu\FytIms\FytIms.Service.Model\obj\Debug\netcoreapp2.0\FytIms.Service.Model.pdb
+D:\FuYu\FytIms\FytIms.Service.Model\obj\Debug\netcoreapp2.0\FytIms.Service.Model.csprojResolveAssemblyReference.cache

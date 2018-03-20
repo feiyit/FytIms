@@ -16,10 +16,6 @@ namespace FytIms.Service.Implements.Sys
     /// </summary>
     public class SysCodeService : DbContext, ISysCodeService
     {
-        public List<SysCode> GetList()
-        {
-            return SysCodeDb.GetList();
-        }
 
         public async Task<ApiResult<List<SysCode>>> GetListAsync()
         {

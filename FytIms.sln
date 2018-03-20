@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FytIms.Core", "FytIms.Core\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FytIms.Common", "FytIms.Common\FytIms.Common.csproj", "{08F87B0F-23E5-453A-B9D1-07C43333D3D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FytIms.Service", "FytIms.Service\FytIms.Service.csproj", "{61974F39-10B8-48DF-A39C-F9F76DCD69AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FytIms.Service", "FytIms.Service\FytIms.Service.csproj", "{61974F39-10B8-48DF-A39C-F9F76DCD69AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FytIms.Service.Model", "FytIms.Service.Model\FytIms.Service.Model.csproj", "{5DDBB38D-983A-40D7-8E24-81BBFF16AC51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{61974F39-10B8-48DF-A39C-F9F76DCD69AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61974F39-10B8-48DF-A39C-F9F76DCD69AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61974F39-10B8-48DF-A39C-F9F76DCD69AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DDBB38D-983A-40D7-8E24-81BBFF16AC51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DDBB38D-983A-40D7-8E24-81BBFF16AC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DDBB38D-983A-40D7-8E24-81BBFF16AC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DDBB38D-983A-40D7-8E24-81BBFF16AC51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{A628F1E1-52B8-4368-96EA-8EB32AB8FB59} = {31BEFE8D-3B3B-4F1B-B1B1-8F82A740C777}
 		{08F87B0F-23E5-453A-B9D1-07C43333D3D2} = {D6406782-2D8A-45F9-A452-E2648536B179}
 		{61974F39-10B8-48DF-A39C-F9F76DCD69AB} = {31BEFE8D-3B3B-4F1B-B1B1-8F82A740C777}
+		{5DDBB38D-983A-40D7-8E24-81BBFF16AC51} = {31BEFE8D-3B3B-4F1B-B1B1-8F82A740C777}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {46EF8EA5-0273-4B9E-B8D8-0C579F38094C}
