@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace FytIms.Api
 {
@@ -29,6 +30,31 @@ namespace FytIms.Api
         {
             services.AddTransient<ISysCodeService, SysCodeService>();
             services.AddMvc();
+
+            //支持跨域请求
+            services.AddCors(options => options.AddPolicy("CorsFytIms",
+                p => //p.WithOrigins("http://localhost:8000/")
+                p.AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowAnyOrigin()
+                ));
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Title = "API Docs",
+                    Version = "v1",
+                    Description = "这是文档的详细信息..",
+                    License = new License
+                    {
+                        Name = "MIT",
+                        Url = "https://mit-license.org/"
+                    }
+                });
+                c.DescribeAllEnumsAsStrings();
+                c.DescribeStringEnumsInCamelCase();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +66,13 @@ namespace FytIms.Api
             }
 
             app.UseMvc();
+            app.UseCors("CorsFytIms");
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MsSystem API V1");
+            });
         }
     }
 }
