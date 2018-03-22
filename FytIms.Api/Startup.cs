@@ -31,13 +31,11 @@ namespace FytIms.Api
             services.AddTransient<ISysCodeService, SysCodeService>();
             services.AddMvc();
 
-            //支持跨域请求
-            services.AddCors(options => options.AddPolicy("CorsFytIms",
-                p => //p.WithOrigins("http://localhost:8000/")
-                p.AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowAnyOrigin()
-                ));
+            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+            });
 
             services.AddSwaggerGen(c =>
             {
@@ -65,8 +63,9 @@ namespace FytIms.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("AllowAll");
             app.UseMvc();
-            app.UseCors("CorsFytIms");
+            
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
