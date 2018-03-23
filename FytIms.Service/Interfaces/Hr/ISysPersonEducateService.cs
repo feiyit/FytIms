@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FytIms.Service.Interfaces.Hr
+namespace FytIms.Service.Interfaces
 {
     /// <summary>
     /// 人员扩展教育业务接口

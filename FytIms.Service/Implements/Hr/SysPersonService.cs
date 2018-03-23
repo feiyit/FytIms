@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using FytIms.Common.ClientData;
 using FytIms.Core;
 using FytIms.Core.Model.Hr;
-using FytIms.Service.Interfaces.Hr;
+using FytIms.Service.Interfaces;
 using FytIms.Service.Model.PostModel;
 
-namespace FytIms.Service.Implements.Hr
+namespace FytIms.Service.Implements
 {
     /// <summary>
     /// 员工业务实现

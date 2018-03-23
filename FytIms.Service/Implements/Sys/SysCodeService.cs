@@ -6,10 +6,10 @@ using FytIms.Common.ClientData;
 using FytIms.Core;
 using FytIms.Core.Model;
 using FytIms.Core.Model.Sys;
-using FytIms.Service.Interfaces.Sys;
+using FytIms.Service.Interfaces;
 using SqlSugar;
 
-namespace FytIms.Service.Implements.Sys
+namespace FytIms.Service.Implements
 {
     /// <summary>
     /// 字典值实现

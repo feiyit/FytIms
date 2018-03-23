@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using FytIms.Common.ClientData;
 using FytIms.Core.Model.Sys;
 
-namespace FytIms.Service.Interfaces.Sys
+namespace FytIms.Service.Interfaces
 {
     /// <summary>
     /// 字典值接口

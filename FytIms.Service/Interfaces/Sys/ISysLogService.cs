@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FytIms.Service.Interfaces.Sys
+namespace FytIms.Service.Interfaces
 {
     /// <summary>
     /// 系统日志业务接口

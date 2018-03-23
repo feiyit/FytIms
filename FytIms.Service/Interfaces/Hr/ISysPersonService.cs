@@ -6,7 +6,7 @@ using FytIms.Common.ClientData;
 using FytIms.Core.Model.Hr;
 using FytIms.Service.Model.PostModel;
 
-namespace FytIms.Service.Interfaces.Hr
+namespace FytIms.Service.Interfaces
 {
     /// <summary>
     /// 员工业务接口

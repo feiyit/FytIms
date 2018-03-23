@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FytIms.Service.Interfaces.Sys
+namespace FytIms.Service.Interfaces
 {
     /// <summary>
     /// 角色菜单业务接口

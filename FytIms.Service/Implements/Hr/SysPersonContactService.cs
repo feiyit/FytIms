@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using FytIms.Core;
-using FytIms.Service.Interfaces.Hr;
+using FytIms.Service.Interfaces;
 
-namespace FytIms.Service.Implements.Hr
+namespace FytIms.Service.Implements
 {
     /// <summary>
     /// 员工联系扩展业务实现

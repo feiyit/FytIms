@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FytIms.Service.Interfaces;
-using FytIms.Service.Interfaces.Sys;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,17 +11,17 @@ namespace FytIms.Api.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        private readonly ISysCodeService _sysCodeService;
+        /*private readonly ISysCodeService _sysCodeService;
 
         public ValuesController(ISysCodeService sysCodeService)
         {
             _sysCodeService = sysCodeService;
-        }
+        }*/
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            var res = _sysCodeService.GetListAsync();
+            //var res = _sysCodeService.GetListAsync();
             return new string[] { "value1", "value2" };
         }
 
