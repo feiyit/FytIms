@@ -196,6 +196,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "FytIms.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/FytIms.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FytIms.Common.dll": {}
+        }
       }
     }
   },
@@ -656,15 +666,21 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "FytIms.Common/1.0.0": {
+      "type": "project",
+      "path": "../FytIms.Common/FytIms.Common.csproj",
+      "msbuildProject": "../FytIms.Common/FytIms.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "FytIms.Common >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bidianqing\\.nuget\\packages\\": {},
+    "C:\\Users\\71551\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -673,17 +689,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\FuYu\\FytIms\\FytIms.Service.Model\\FytIms.Service.Model.csproj",
+      "projectUniqueName": "E:\\2018Project\\美亚集团IMS\\FytIms\\FytIms.Service.Model\\FytIms.Service.Model.csproj",
       "projectName": "FytIms.Service.Model",
-      "projectPath": "D:\\FuYu\\FytIms\\FytIms.Service.Model\\FytIms.Service.Model.csproj",
-      "packagesPath": "C:\\Users\\bidianqing\\.nuget\\packages\\",
-      "outputPath": "D:\\FuYu\\FytIms\\FytIms.Service.Model\\obj\\",
+      "projectPath": "E:\\2018Project\\美亚集团IMS\\FytIms\\FytIms.Service.Model\\FytIms.Service.Model.csproj",
+      "packagesPath": "C:\\Users\\71551\\.nuget\\packages\\",
+      "outputPath": "E:\\2018Project\\美亚集团IMS\\FytIms\\FytIms.Service.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\bidianqing\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\71551\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -691,12 +707,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\2018Project\\美亚集团IMS\\FytIms\\FytIms.Common\\FytIms.Common.csproj": {
+              "projectPath": "E:\\2018Project\\美亚集团IMS\\FytIms\\FytIms.Common\\FytIms.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

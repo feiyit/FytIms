@@ -1,0 +1,169 @@
+﻿@page
+@model FytIms.Pages.OA.Sys.CodesModel
+@{
+    ViewData["Title"] = "Codes";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+
+<div class="layui-col-220">
+    <div class="layui-nav-title">字典管理　<button class="layui-btn layui-btn-primary layui-btn-sm" id="code-class-add"><i class="layui-icon"></i>添加</button></div>
+    <ul id="code-tree" class="ztree layui-tree-cus"></ul>
+    <div class="tree-footer">
+        <button type="button" class="layui-btn layui-btn-sm" data-type="typeEdit"><i class="layui-icon"></i> 修改</button>
+        <button type="button" class="layui-btn layui-btn-sm" data-type="typeDel"><i class="layui-icon"></i> 删除</button>
+    </div>
+</div>
+<div class="right-col-body">
+    <div class="list-wall">
+        <div class="layui-form list-search">
+            <button type="button" class="layui-btn layui-btn-sm" data-type="codeAdd"><i class="layui-icon"></i> 新增</button>
+            <button type="button" class="layui-btn layui-btn-sm" data-type="codeDel"><i class="layui-icon"></i> 删除</button>
+        </div>
+        <table class="layui-hide" id="tablist"></table>
+    </div>
+</div>
+<script type="text/html" id="switchTpl">
+    <!-- 这里的 checked 的状态只是演示 -->
+    <input type="checkbox" name="status" value="{{d.guid}}" lay-skin="switch" lay-text="ON|OFF" lay-filter="statusedit" {{ d.status?'checked':''}}>
+</script>
+<link rel="stylesheet" href="/ztree/css/metroStyle/metroStyle.css" type="text/css">
+@section Scripts{
+    <script type="text/javascript" src="/ztree/js/jquery.ztree.core.min.js"></script>
+    <script type="text/javascript" src="http://www.zhangxinxu.com/study/js/jquery-smartMenu.js"></script>
+    <script>
+        layui.use(['table', 'tree', 'layer'],
+            function() {
+                var table = layui.table,
+                    layer = layui.layer, 
+                    form = layui.form;
+                table.render({
+                    elem: '#tablist',
+                    url: '/api/code/getpages',
+                    cols: [
+                        [
+                            { type: 'checkbox', fixed: 'left' },
+                            { field: 'name', title: '字典名称', sort: true, fixed: 'left' },
+                            { field: 'type', title: '阔值' }, { field: 'sort', width: 150, title: '顺序', sort: true },
+                            { field: 'status', width: 150, title: '状态', templet: '#switchTpl' }
+                        ]
+                    ],
+                    page: true,
+                    id: 'tables'
+                });
+                //监听状态操作
+                form.on('switch(statusedit)', function (obj) {
+                    var index = layer.load(1, {
+                        shade: [0.1,'#000']
+                    });
+                    os.ajax('api/code/editstatus', { guid: this.value, status: obj.elem.checked }, function(res) {
+                        if (res.statusCode === 200) {
+                            os.toastr('ok', '状态更改成功~');
+                            layer.close(index);
+                        } else {
+                            os.toastr('error',res.message);
+                        }
+                    });
+                });
+                var setting = {
+                    async: {
+                        enable: true,
+                        url: "/api/codetype/gettree"
+                    },
+                    callback: {
+                        onClick: onClick
+                    }
+                };
+                var guid = '',typeName='' ,active = {
+                        reload: function() {
+                            table.reload('tables',
+                                {
+                                    page: {
+                                        curr: 1
+                                    },
+                                    where: {
+                                        guid: guid
+                                    }
+                                });
+                        },
+                        typeEdit: function() {
+                            os.Open('字典修改', '/oa/sys/codesmodify/?guid=' + guid,'500px','280px',function() {
+                                $.fn.zTree.init($("#code-tree"), setting);
+                            });
+                        },
+                        typeDel: function () {
+                            layer.confirm('确定要删除 '+typeName+' 吗？', function (index) {
+                                layer.close(index);
+                                os.ajax('api/codetype/delete/', { guid: guid }, function (res) {
+                                    if (res.statusCode === 200) {
+                                        $.fn.zTree.init($("#code-tree"), setting);
+                                        os.toastr('ok', '删除成功！');
+                                    } else {
+                                        os.toastr('error', res.message);
+                                    }
+                                });
+                            }); 
+                            
+                        },
+                        codeAdd: function () {
+                            if (!guid) {
+                                os.toastr("error","请选择左侧字典类型~");
+                                return;
+                            }
+                            os.Open('添加字典值', '/oa/sys/codesvalmodify/?guid=' + guid
+                                , '620px', '370px', function () {
+                                active.reload();
+                            });
+                        },
+                        codeDel: function () {
+                            var checkStatus = table.checkStatus('tables')
+                                , data = checkStatus.data;
+                            if (data.length === 0) {
+                                os.toastr("warning", "请选择要删除的项目~");
+                                return;
+                            }
+                            var str = '';
+                            $.each(data, function(i,item) {
+                                str += item.guid + ",";
+                            });
+                            layer.confirm('确定要执行批量删除吗？', function (index) {
+                                layer.close(index);
+                                var loadindex = layer.load(1, {
+                                    shade: [0.1,'#000']
+                                });
+                                os.ajax('api/code/delete/', { guid: str }, function (res) {
+                                    layer.close(loadindex);
+                                    if (res.statusCode === 200) {
+                                        active.reload();
+                                        os.toastr('ok', '删除成功！');
+                                    } else {
+                                        os.toastr('error', res.message);
+                                    }
+                                });
+                            }); 
+                            
+                        }
+                    };
+                //添加栏目
+                $('#code-class-add').on('click',
+                    function() {
+                        os.Open('字典栏目','/oa/sys/codesmodify/','500px','280px',function() {
+                                $.fn.zTree.init($("#code-tree"), setting);
+                        });
+                    });
+
+                $.fn.zTree.init($("#code-tree"), setting);
+
+                $('.tree-footer .layui-btn,.list-search .layui-btn').on('click', function(){
+                    var type = $(this).data('type');
+                    active[type] ? active[type].call(this) : '';
+                });
+                function onClick(event, treeId, treeNode, clickFlag) {
+                    $(".tree-footer").addClass("active");
+                    guid = treeNode.guid;
+                    typeName = treeNode.name;
+                    active.reload();
+                }
+            });
+    </script>
+}
+

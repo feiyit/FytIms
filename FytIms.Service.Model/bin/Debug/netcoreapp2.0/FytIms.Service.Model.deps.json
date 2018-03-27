@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "FytIms.Service.Model/1.0.0": {
+        "dependencies": {
+          "FytIms.Common": "1.0.0"
+        },
         "runtime": {
           "FytIms.Service.Model.dll": {}
+        }
+      },
+      "FytIms.Common/1.0.0": {
+        "runtime": {
+          "FytIms.Common.dll": {}
         }
       }
     }
   },
   "libraries": {
     "FytIms.Service.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FytIms.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

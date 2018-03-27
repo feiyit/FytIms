@@ -1,0 +1,79 @@
+﻿.log-body {
+    background: url(/themes/img/login-back.jpg) no-repeat;
+}
+.login-form{width:500px; height: 480px; background-color: #FFFFFF; position: absolute; left:50%; margin-left: -250px;
+top:50%; margin-top: -260px; border-radius: 10px;box-shadow: 0 6px 40px rgba(128, 128, 128, 0.25);}
+.login-form .title{height:60px; text-align: center; line-height: 60px; padding:10px 0;}
+.login-form .title img{height:50px; }
+.login-form .title span{font-size:18px; display: inline-block; margin-left: 15px; position: relative; top: 10px;
+text-shadow: #e6e7e8 0 1px 0;}
+.login-box{	padding-top: 45px;border-radius: 2px;}
+.login-box form{position: relative;}
+.login-box .layui-input-block{width:60%;}
+.login-box .layui-form-label i{ color:#009688}
+.login-box .layui-btn{padding:0 50px;}
+.login-box .last{text-align:center;}
+.login-box .layui-form-item{margin-bottom:25px;}
+/* 滑动验证 */
+.code-box {
+    width: 99%;
+    height: 40px;
+    color: #fff;
+    text-shadow: 1px 1px 1px black;
+    background: transparent;
+    border: 0;
+    outline: none;
+    border: 1px solid #e6e7e8;
+}
+.code-box{
+	position: relative;
+}
+.code-box p,
+.code-box span{
+	display:block;
+	position: absolute;
+	left: 0;
+	height: 40px;
+	text-align: center;
+	line-height: 36px;
+}
+.code-box span{
+	width: 40px;
+	background-color:#fff;
+	font-family: "宋体";
+	font-size: 16px;
+	cursor: pointer;
+}
+.code-box p{
+	width: 0;
+	background-color: #FFFF99;
+	overflow: hidden;
+	text-indent: -20px;
+	transition: background 1s ease-in;
+}
+.code-box small{font-size:14px; display: block; position: absolute; color: #999; text-shadow:none;
+left:80px; line-height:38px;}
+.code-box .code-input{
+	display: none;
+}
+.log-footer{text-align: center;  width:100%; line-height: 30px; height: 30px; color: #999;}
+.log-footer a{ color: #009688; font-weight: bold;}
+.login-box span.error{color: #f96868; padding: 0 6px; position: absolute; right: 40px; display: none !important;}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.r360 {
+    -webkit-transform: rotate(360deg);
+    animation: rotation 1s linear infinite;
+    -moz-animation: rotation 1s linear infinite;
+    -webkit-animation: rotation 1s linear infinite;
+    -o-animation: rotation 1s linear infinite;
+}

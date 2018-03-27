@@ -1,0 +1,73 @@
+﻿@page
+@model FytIms.Pages.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/layui/css/layui.css" asp-append-version="true" />
+    <environment include="Development">
+        <link rel="stylesheet" href="~/themes/css/toastr.css" />
+        <link rel="stylesheet" href="~/themes/css/login.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/themes/css/login.css" asp-append-version="true" />
+    </environment>
+    <title>美亚集团管理系统</title>
+</head>
+<body class="log-body">
+    <div class="login-form">
+        <div class="title">
+            <img src="/themes/img/logo.png" /><span>综合管理平台</span>
+        </div>
+        <div class="login-box">
+            <form action="admin/login" class="layui-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i class="layui-icon"></i></label>
+                    <div class="layui-input-block">
+                        <input type="text" name="loginname" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入账号" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i class="layui-icon"></i></label>
+                    <div class="layui-input-block">
+                        <input type="password" name="loginpwd" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入密码" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><i class="layui-icon"></i></label>
+                    <div class="layui-input-block">
+                        <div class="code-box" id="code-box">
+                            <input type="text" id="code" name="code" placeholder="向右滑动完成验证" class="code-input" />
+                            <p></p>
+                            <small id="box-tip">向右滑动完成验证</small>
+                            <span>>>></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item last">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" type="button" lay-submit="" lay-filter="loginsub">立即登录</button>
+                    </div>
+                </div>
+                <p class="log-footer"> Copyright 2018 - 2020　<a href="https://www.feiyit.com" target="_blank">meiya.com</a></p>
+                <input type="hidden" id="hcode" value="@ViewData["vsCode"]" />
+            </form>
+        </div>
+    </div>
+    <script src="~/themes/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/layui/layui.js" asp-append-version="true"></script>
+    <environment include="Development">
+        <script src="~/themes/js/toastr.js"></script>
+        <script src="~/themes/js/app.js"></script>
+        <script src="~/themes/js/login.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/themes/js/login.js" asp-append-version="true"></script>
+    </environment>
+</body>
+</html>

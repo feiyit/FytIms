@@ -28,6 +28,7 @@ namespace FytIms.Api
         {
             services.AddTransient<ISysPersonService, SysPersonService>();
             services.AddTransient<ISysCodeService, SysCodeService>();
+            services.AddTransient<ISysCodeTypeService, SysCodeTypeService>();
             services.AddMvc();
 
             services.AddCors();

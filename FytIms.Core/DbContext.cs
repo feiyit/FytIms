@@ -17,7 +17,7 @@ namespace FytIms.Core
         {
             Db = new SqlSugarClient(new ConnectionConfig()
             {
-                ConnectionString = "server=localhost;database=fytims;uid=root;pwd=123456;charset='utf8';SslMode=None",
+                ConnectionString = "server=localhost;database=fyt_ims;uid=root;pwd=123456;charset='utf8';SslMode=None",
                 DbType = DbType.MySql,
                 IsAutoCloseConnection = true
             });

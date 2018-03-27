@@ -664,7 +664,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bidianqing\\.nuget\\packages\\": {},
+    "C:\\Users\\71551\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -673,17 +673,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\FuYu\\FytIms\\FytIms.Common\\FytIms.Common.csproj",
+      "projectUniqueName": "E:\\2018Project\\美亚集团IMS\\FytIms\\FytIms.Common\\FytIms.Common.csproj",
       "projectName": "FytIms.Common",
-      "projectPath": "D:\\FuYu\\FytIms\\FytIms.Common\\FytIms.Common.csproj",
-      "packagesPath": "C:\\Users\\bidianqing\\.nuget\\packages\\",
-      "outputPath": "D:\\FuYu\\FytIms\\FytIms.Common\\obj\\",
+      "projectPath": "E:\\2018Project\\美亚集团IMS\\FytIms\\FytIms.Common\\FytIms.Common.csproj",
+      "packagesPath": "C:\\Users\\71551\\.nuget\\packages\\",
+      "outputPath": "E:\\2018Project\\美亚集团IMS\\FytIms\\FytIms.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\bidianqing\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\71551\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -691,8 +691,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
