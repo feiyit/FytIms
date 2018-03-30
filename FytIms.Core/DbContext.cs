@@ -17,6 +17,7 @@ namespace FytIms.Core
         {
             Db = new SqlSugarClient(new ConnectionConfig()
             {
+                //ConnectionString = "server=localhost;database=fyt_ims;uid=root;pwd=feiyit302050;charset='utf8';SslMode=None",
                 ConnectionString = "server=localhost;database=fyt_ims;uid=root;pwd=123456;charset='utf8';SslMode=None",
                 DbType = DbType.MySql,
                 IsAutoCloseConnection = true
@@ -40,7 +41,6 @@ namespace FytIms.Core
         public DbSet<SysPerson> SysPersonDb => new DbSet<SysPerson>(Db);
         public DbSet<SysPersonContact> SysPersonContactDb => new DbSet<SysPersonContact>(Db);
         public DbSet<SysPersonEducate> SysPersonEducateDb => new DbSet<SysPersonEducate>(Db);
-        public DbSet<SysPersonSpecialty> SysPersonSpecialtyDb => new DbSet<SysPersonSpecialty>(Db);
         public DbSet<SysPersonWork> SysPersonWorkDb => new DbSet<SysPersonWork>(Db);
     }
 }

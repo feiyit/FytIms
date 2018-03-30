@@ -10,9 +10,9 @@ D:\FuYu\FytIms\FytIms.Core\obj\Debug\netcoreapp2.0\FytIms.Core.csprojResolveAsse
 E:\2018Project\美亚集团IMS\FytIms\FytIms.Core\bin\Debug\netcoreapp2.0\FytIms.Core.deps.json
 E:\2018Project\美亚集团IMS\FytIms\FytIms.Core\bin\Debug\netcoreapp2.0\FytIms.Core.dll
 E:\2018Project\美亚集团IMS\FytIms\FytIms.Core\bin\Debug\netcoreapp2.0\FytIms.Core.pdb
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Core\obj\Debug\netcoreapp2.0\FytIms.Core.csprojResolveAssemblyReference.cache
 E:\2018Project\美亚集团IMS\FytIms\FytIms.Core\obj\Debug\netcoreapp2.0\FytIms.Core.csproj.CoreCompileInputs.cache
 E:\2018Project\美亚集团IMS\FytIms\FytIms.Core\obj\Debug\netcoreapp2.0\FytIms.Core.AssemblyInfoInputs.cache
 E:\2018Project\美亚集团IMS\FytIms\FytIms.Core\obj\Debug\netcoreapp2.0\FytIms.Core.AssemblyInfo.cs
 E:\2018Project\美亚集团IMS\FytIms\FytIms.Core\obj\Debug\netcoreapp2.0\FytIms.Core.dll
 E:\2018Project\美亚集团IMS\FytIms\FytIms.Core\obj\Debug\netcoreapp2.0\FytIms.Core.pdb
-E:\2018Project\美亚集团IMS\FytIms\FytIms.Core\obj\Debug\netcoreapp2.0\FytIms.Core.csprojResolveAssemblyReference.cache

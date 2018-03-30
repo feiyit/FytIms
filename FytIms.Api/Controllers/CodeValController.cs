@@ -30,7 +30,7 @@ namespace FytIms.Api.Controllers
         public async Task<JsonResult> GetPages(SysCodePostPage request)
         {
             var res= await _sysCodeService.GetPagesAsync(request);
-            return Json(new { code = 0, msg = "success", count = res.data.TotalPages, data = res.data.Items });
+            return Json(new { code = 0, msg = "success", count = res.data.TotalItems, data = res.data.Items });
         }
 
         /// <summary>

@@ -7,3 +7,14 @@ D:\FuYu\FytIms\FytIms.Service.Model\obj\Release\netcoreapp2.0\FytIms.Service.Mod
 D:\FuYu\FytIms\FytIms.Service.Model\obj\Release\netcoreapp2.0\FytIms.Service.Model.AssemblyInfo.cs
 D:\FuYu\FytIms\FytIms.Service.Model\obj\Release\netcoreapp2.0\FytIms.Service.Model.dll
 D:\FuYu\FytIms\FytIms.Service.Model\obj\Release\netcoreapp2.0\FytIms.Service.Model.pdb
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\bin\Release\netcoreapp2.0\FytIms.Service.Model.deps.json
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\bin\Release\netcoreapp2.0\FytIms.Service.Model.dll
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\bin\Release\netcoreapp2.0\FytIms.Service.Model.pdb
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\bin\Release\netcoreapp2.0\FytIms.Common.dll
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\bin\Release\netcoreapp2.0\FytIms.Common.pdb
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\obj\Release\netcoreapp2.0\FytIms.Service.Model.csprojResolveAssemblyReference.cache
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\obj\Release\netcoreapp2.0\FytIms.Service.Model.csproj.CoreCompileInputs.cache
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\obj\Release\netcoreapp2.0\FytIms.Service.Model.AssemblyInfoInputs.cache
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\obj\Release\netcoreapp2.0\FytIms.Service.Model.AssemblyInfo.cs
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\obj\Release\netcoreapp2.0\FytIms.Service.Model.dll
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Service.Model\obj\Release\netcoreapp2.0\FytIms.Service.Model.pdb

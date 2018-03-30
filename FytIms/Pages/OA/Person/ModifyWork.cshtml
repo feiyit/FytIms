@@ -1,0 +1,102 @@
+﻿@page
+@model FytIms.Pages.OA.Person.ModifyWorkModel
+@{
+    ViewData["Title"] = "工作经历编辑";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+<form class="layui-form form-cus" action="">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">公司名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="CompanyName" value="@Model.Work.CompanyName" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入公司名称" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">职务</label>
+            <div class="layui-input-inline">
+                <input type="text" name="PostName" value="@Model.Work.PostName" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入联系人关系" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">入职时间</label>
+            <div class="layui-input-inline">
+                <input type="text" name="EntryTime" value="@Model.Work.EntryTime" autocomplete="off" placeholder="请输入入职时间" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">职务</label>
+            <div class="layui-input-inline">
+                <input type="text" name="OutTime" value="@Model.Work.OutTime" autocomplete="off" placeholder="请输入离职时间" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">在职地点</label>
+            <div class="layui-input-inline">
+                <input type="text" name="Address" value="@Model.Work.Address" autocomplete="off" placeholder="请输入在职地点" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">职务</label>
+            <div class="layui-input-inline">
+                <input type="text" name="WorkContent" value="@Model.Work.WorkContent" autocomplete="off" placeholder="请输入职务" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">证明人</label>
+            <div class="layui-input-inline">
+                <input type="text" name="Witness" value="@Model.Work.Witness" autocomplete="off" placeholder="请输入证明人" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">联系方式</label>
+            <div class="layui-input-inline">
+                <input type="text" name="WitnessTel" value="@Model.Work.WitnessTel" autocomplete="off" placeholder="请输入证明人联系方式" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">离职原因</label>
+        <div class="layui-input-block">
+            <textarea name="OutSummary" placeholder="请输入离职原因" maxlength="200" class="layui-textarea">@Html.Raw(Model.Work.OutSummary)</textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="submit">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary btn-open-close">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="Guid" id="guid" value=@Model.Work.Guid />
+    <input type="hidden" name="PersonGuid" value=@Model.Work.PersonGuid />
+</form>
+@section Scripts{
+    <script>
+        layui.use(['form'], function () {
+            var form = layui.form;
+            var index = parent.layer.getFrameIndex(window.name);
+            //监听提交
+            form.on('submit(submit)', function (data) {
+                var urls = "api/person/addwork";
+                if ($("#guid").val()) {
+                    urls = "api/person/editwork";
+                }
+                os.ajax(urls, data.field, function(res) {
+                    parent.layer.close(index);
+                });
+                return false;
+            });
+            $(".btn-open-close").on('click', function () {
+                parent.layer.close(index);
+            });
+
+        });
+    </script>
+}
+

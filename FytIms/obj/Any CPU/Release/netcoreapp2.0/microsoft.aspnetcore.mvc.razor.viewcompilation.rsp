@@ -1,0 +1,16 @@
+E:\2018Project\美亚集团IMS\FytIms\FytIms
+--output-path=obj\Any CPU\Release\netcoreapp2.0\
+--application-name=FytIms
+--content-root=E:\2018Project\美亚集团IMS\FytIms\FytIms
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\Error.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\Login.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\index.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Person\Index.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Person\Modify.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Sys\Codes.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Sys\CodesModify.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Sys\CodesValModify.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\_Layout.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\_ValidationScriptsPartial.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\_ViewImports.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\_ViewStart.cshtml

@@ -1,0 +1,94 @@
+﻿@page
+@model FytIms.Pages.OA.Person.ModifyEducateModel
+@{
+    ViewData["Title"] = "教育经历编辑";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+<form class="layui-form form-cus" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">院校类型</label>
+        <div class="layui-input-block">
+            <select name="EducateType">
+                @foreach (var item in Model.codeList.Where(m => m.parentguid == "6ceddac9-c24a-4e36-bcc3-33d31a2d737e"))
+                {
+                    if (item.name == Model.Educate.EducateType)
+                    {
+                        <option value="@item.name" selected>@item.name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.name">@item.name</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">入学时间</label>
+        <div class="layui-input-block">
+            <input type="text" name="AdmissionTime" value="@Model.Educate.AdmissionTime" lay-verify="date" lay-verType="tips" autocomplete="off" placeholder="请输入学时间" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">毕业时间</label>
+        <div class="layui-input-block">
+            <input type="text" name="GraduateTime" value="@Model.Educate.GraduateTime" lay-verify="date" lay-verType="tips" autocomplete="off" placeholder="请输入毕业时间" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">院校名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="SchoolName" value="@Model.Educate.SchoolName" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入院校名称" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">专业</label>
+        <div class="layui-input-block">
+            <select name="Specialty">
+                @foreach (var item in Model.codeList.Where(m => m.parentguid == "1f1db281-ce59-42ca-9647-26f7fb882b2e"))
+        {
+            if (item.name == Model.Educate.Specialty)
+            {
+                <option value="@item.name" selected>@item.name</option>
+    }
+    else
+    {
+        <option value="@item.name">@item.name</option>
+}
+}
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="submit">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary btn-open-close">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="Guid" id="guid" value=@Model.Educate.Guid />
+    <input type="hidden" name="PersonGuid" value=@Model.Educate.PersonGuid />
+</form>
+@section Scripts{
+    <script>
+        layui.use(['form'], function () {
+            var form = layui.form;
+            var index = parent.layer.getFrameIndex(window.name);
+            //监听提交
+            form.on('submit(submit)', function (data) {
+                var urls = "api/person/addeducate";
+                if ($("#guid").val()) {
+                    urls = "api/person/editeducate";
+                }
+                os.ajax(urls, data.field, function (res) {
+                    parent.layer.close(index);
+                });
+                return false;
+            });
+            $(".btn-open-close").on('click', function () {
+                parent.layer.close(index);
+            });
+
+        });
+    </script>
+}
+

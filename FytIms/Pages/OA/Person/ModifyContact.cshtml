@@ -1,0 +1,63 @@
+﻿@page
+@model FytIms.Pages.OA.Person.ModifyContactModel
+@{
+    ViewData["Title"] = "联系人编辑";
+    Layout = "~/Pages/_Layout.cshtml";
+}
+<form class="layui-form form-cus" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系人姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="Name" value="@Model.Contact.Name" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入联系人姓名" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系人关系</label>
+        <div class="layui-input-block">
+            <input type="text" name="Relation" value="@Model.Contact.Relation" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入联系人关系" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系方式</label>
+        <div class="layui-input-block">
+            <input type="text" name="Mobile" value="@Model.Contact.Mobile" lay-verify="required|phone" lay-verType="tips" autocomplete="off" placeholder="请输入联系方式" class="layui-input">
+        </div>
+    </div>    
+    <div class="layui-form-item">
+        <label class="layui-form-label">是否为紧急联系人</label>
+        <div class="layui-input-block">
+            <input type="checkbox" name="IsUrgentStr" lay-skin="switch" lay-text="ON|OFF" value="true" @(Model.Contact.IsUrgent ? "checked" : "")>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit="" lay-filter="submit">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary btn-open-close">取消</button>
+        </div>
+    </div>
+    <input type="hidden" name="Guid" id="guid" value=@Model.Contact.Guid />
+    <input type="hidden" name="PersonGuid" value=@Model.Contact.PersonGuid />
+</form>
+@section Scripts{
+    <script>
+        layui.use(['form'], function () {
+            var form = layui.form;
+            var index = parent.layer.getFrameIndex(window.name);
+            //监听提交
+            form.on('submit(submit)', function (data) {
+                var urls = "api/person/addcontact";
+                if ($("#guid").val()) {
+                    urls = "api/person/editcontact";
+                }
+                os.ajax(urls, data.field, function(res) {
+                    parent.layer.close(index);
+                });
+                return false;
+            });
+            $(".btn-open-close").on('click', function () {
+                parent.layer.close(index);
+            });
+
+        });
+    </script>
+}

@@ -7,21 +7,21 @@
 <div class="list-wall">
     <div class="layui-form list-search">
         <div class="layui-inline">
-            <input class="layui-input layui-input-sm" placeholder="根据关键字搜索" name="id" id="demoReload" autocomplete="off">
+            <input class="layui-input layui-input-sm" placeholder="根据关键字搜索" id="key" autocomplete="off">
         </div>
         <div class="layui-inline">
             <label class="layui-form-label">状态</label>
             <div class="layui-input-inline">
-                <select name="modules">
-                    <option value="0">在职</option>
-                    <option value="1">离职</option>
+                <select id="poststatus">
+                    <option value="1">在职</option>
+                    <option value="0">离职</option>
                 </select>
             </div>
         </div>
         <button class="layui-btn layui-btn-sm" data-type="reload">搜索</button>
         <a href="/oa/person/modify/" class="layui-btn layui-btn-sm" data-type="reload">新增</a>
     </div>
-    <table class="layui-hide" id="test"></table>
+    <table class="layui-hide" id="tablist" lay-filter="tool"></table>
 </div>
 @section Scripts{
     <script>
@@ -29,27 +29,54 @@
             var table = layui.table;
 
             table.render({
-                elem: '#test'
-                , url: '/data/list.json'
+                elem: '#tablist'
+                , url: '/api/person/getpages'
                 , cols: [[
                     { type: 'checkbox', fixed: 'left' }
-                    , { field: 'id', width: 80, title: 'ID', sort: true, fixed: 'left' }
-                    , { field: 'username', width: 100, title: '用户名' }
-                    , { field: 'city', width: 80, title: '姓名', sort: true }
-                    , { field: 'sex', title: '性别' }
-                    , { field: 'sign', width: 219, title: '所属公司' }
-                    , { field: 'experience', width: 120, title: '所属部门', sort: true }
-                    , { field: 'score', width: 120, title: '职称', sort: true }
-                    , { field: 'wealth', width: 120, title: '联系电话', sort: true, fixed: 'right' }
+                    , { field: 'loginName', width: 100, title: '用户名' }
+                    , { field: 'trueName', width: 80, title: '姓名', sort: true }
+                    , { field: 'sex', width: 80, title: '性别' }
+                    , { field: 'companyName', title: '所属公司' }
+                    , { field: 'departmentName', width: 150, title: '所属部门' }
+                    , { field: 'mobile', width: 150, title: '联系电话' }
+                    , { field: 'email', width: 200, title: '邮箱' }
                     , { width: 120, title: '操作', fixed: 'right', toolbar: '#tool' }
                 ]]
-                , page: true
+                , page: true,
+                id: 'tables'
+            });
+            //监听工具条
+            table.on('tool(tool)', function (obj) {
+                var data = obj.data;
+                if (obj.event === 'edit') {
+                    window.location.href = '/oa/person/modify/?guid=' + data.guid;
+                } else if (obj.event === "postedit") {
+                    os.toastr('ok','稍后实现功能哈~~');
+                }
+            });
+            var active = {
+                reload: function () {                    
+                    table.reload('tables', {
+                        page: {
+                            curr: 1
+                        }
+                        , where: {
+                            key: $("#key").val(),
+                            poststatus: $("#poststatus").val() == 1 ? true : false
+                        }
+                    });
+                }
+            };
+
+            $('.list-search button').on('click', function () {
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
             });
         });
     </script>
     <script type="text/html" id="tool">
         <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">修改</a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">离职</a>
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="postedit">离职</a>
     </script>
 }
 

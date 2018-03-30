@@ -75,7 +75,7 @@ namespace FytIms.Core.Model.Hr
         /// Default:
         /// Nullable:False
         /// </summary>           
-        public DateTime Edit { get; set; }
+        public DateTime EditTime { get; set; }
 
     }
 }

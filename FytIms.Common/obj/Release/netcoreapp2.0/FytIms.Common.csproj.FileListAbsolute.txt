@@ -7,3 +7,12 @@ D:\FuYu\FytIms\FytIms.Common\obj\Release\netcoreapp2.0\FytIms.Common.AssemblyInf
 D:\FuYu\FytIms\FytIms.Common\obj\Release\netcoreapp2.0\FytIms.Common.dll
 D:\FuYu\FytIms\FytIms.Common\obj\Release\netcoreapp2.0\FytIms.Common.pdb
 D:\FuYu\FytIms\FytIms.Common\obj\Release\netcoreapp2.0\FytIms.Common.csprojResolveAssemblyReference.cache
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Common\bin\Release\netcoreapp2.0\FytIms.Common.deps.json
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Common\bin\Release\netcoreapp2.0\FytIms.Common.dll
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Common\bin\Release\netcoreapp2.0\FytIms.Common.pdb
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Common\obj\Release\netcoreapp2.0\FytIms.Common.csprojResolveAssemblyReference.cache
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Common\obj\Release\netcoreapp2.0\FytIms.Common.csproj.CoreCompileInputs.cache
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Common\obj\Release\netcoreapp2.0\FytIms.Common.AssemblyInfoInputs.cache
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Common\obj\Release\netcoreapp2.0\FytIms.Common.AssemblyInfo.cs
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Common\obj\Release\netcoreapp2.0\FytIms.Common.dll
+E:\2018Project\美亚集团IMS\FytIms\FytIms.Common\obj\Release\netcoreapp2.0\FytIms.Common.pdb

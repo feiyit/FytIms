@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "cfb887c0533e93468f4d6f40b97fdba321074876"
+    "signature": "f3b7e18f00e9845e010c5dde4b9a39b83d32785a"
   },
   "compilationOptions": {
     "defines": [
@@ -23,6 +23,7 @@
     ".NETCoreApp,Version=v2.0": {
       "FytIms/1.0.0": {
         "dependencies": {
+          "BuildBundlerMinifier": "2.6.362",
           "FytIms.Api": "1.0.0",
           "FytIms.Common": "1.0.0",
           "FytIms.Core": "1.0.0",
@@ -39,6 +40,7 @@
           "FytIms.dll": {}
         }
       },
+      "BuildBundlerMinifier/2.6.362": {},
       "Libuv/1.10.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0"
@@ -4372,6 +4374,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "BuildBundlerMinifier/2.6.362": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J8vHrhvkvBAkzf5eA0zDu9Z4RbVlA8lYWGq0UyvWh98kKpqQZpzUe3yC89Rq9nQyiO0pdULrPPs9sSmx+xq8jA==",
+      "path": "buildbundlerminifier/2.6.362",
+      "hashPath": "buildbundlerminifier.2.6.362.nupkg.sha512"
     },
     "Libuv/1.10.0": {
       "type": "package",

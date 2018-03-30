@@ -26,6 +26,9 @@ namespace FytIms
             services.AddTransient<ISysPersonService, SysPersonService>();
             services.AddTransient<ISysCodeService, SysCodeService>();
             services.AddTransient<ISysCodeTypeService, SysCodeTypeService>();
+            services.AddTransient<ISysPersonContactService, SysPersonContactService>();
+            services.AddTransient<ISysPersonEducateService, SysPersonEducateService>();
+            services.AddTransient<ISysPersonWorkService, SysPersonWorkService>();
             services.AddMvc();
         }
 

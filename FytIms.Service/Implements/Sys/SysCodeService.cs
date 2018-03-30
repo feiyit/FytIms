@@ -34,6 +34,7 @@ namespace FytIms.Service.Implements
                 data = model != null ? new SysCodeDto()
                 {
                     guid = model.Guid,
+                    parentguid=model.ParentGuid,
                     name = model.Name,
                     type = model.CodeType,
                     sort = model.Sort,
@@ -112,6 +113,7 @@ namespace FytIms.Service.Implements
                             guid = m.Guid,
                             name = m.Name,
                             sort = m.Sort,
+                            parentguid=m.ParentGuid,
                             status = m.Status,
                             type = m.CodeType
                         }).ToPageAsync(parm.page, parm.limit);

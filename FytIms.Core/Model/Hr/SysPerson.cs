@@ -75,14 +75,14 @@ namespace FytIms.Core.Model.Hr
         /// Default:
         /// Nullable:False
         /// </summary>           
-        public string HeadPic { get; set; }
+        public string HeadPic { get; set; } = "/themes/img/add-photo.svg";
 
         /// <summary>
         /// Desc:性别
         /// Default:
         /// Nullable:False
         /// </summary>           
-        public string Sex { get; set; }
+        public string Sex { get; set; } = "男";
 
         /// <summary>
         /// Desc:手机号码
@@ -124,28 +124,28 @@ namespace FytIms.Core.Model.Hr
         /// Default:b'1'
         /// Nullable:False
         /// </summary>           
-        public bool LoginStatus { get; set; }
+        public bool LoginStatus { get; set; } = true;
 
         /// <summary>
         /// Desc:删除状态
         /// Default:b'0'
         /// Nullable:False
         /// </summary>           
-        public bool DelStatus { get; set; }
+        public bool DelStatus { get; set; } = false;
 
         /// <summary>
         /// Desc:在职状态  0=离职1=在职
         /// Default:b'1'
         /// Nullable:False
         /// </summary>           
-        public bool PostStatus { get; set; }
+        public bool PostStatus { get; set; } = true;
 
         /// <summary>
         /// Desc:审核状态
         /// Default:
         /// Nullable:False
         /// </summary>           
-        public bool AuditStatus { get; set; }
+        public bool AuditStatus { get; set; } = true;
 
         /// <summary>
         /// Desc:生日
@@ -239,18 +239,25 @@ namespace FytIms.Core.Model.Hr
         public string LanguageSkills { get; set; }
 
         /// <summary>
+        /// Desc:特长
+        /// Default:
+        /// Nullable:True
+        /// </summary>           
+        public string Specialty { get; set; }
+
+        /// <summary>
         /// Desc:最后登录时间
         /// Default:
         /// Nullable:False
         /// </summary>           
-        public DateTime LastLoginTime { get; set; }
+        public DateTime LastLoginTime { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Desc:登录次数
         /// Default:0
         /// Nullable:False
         /// </summary>           
-        public int LoginSum { get; set; }
+        public int LoginSum { get; set; } = 0;
 
         /// <summary>
         /// Desc:苹果设备的唯一标识
@@ -271,7 +278,7 @@ namespace FytIms.Core.Model.Hr
         /// Default:b'1'
         /// Nullable:False
         /// </summary>           
-        public bool IsPush { get; set; }
+        public bool IsPush { get; set; } = true;
 
         /// <summary>
         /// Desc:设备名称
@@ -285,14 +292,14 @@ namespace FytIms.Core.Model.Hr
         /// Default:
         /// Nullable:False
         /// </summary>           
-        public DateTime AddTime { get; set; }
+        public DateTime AddTime { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Desc:修改时间
         /// Default:
         /// Nullable:False
         /// </summary>           
-        public DateTime EditTime { get; set; }
+        public DateTime EditTime { get; set; } = DateTime.Now;
 
     }
 }
