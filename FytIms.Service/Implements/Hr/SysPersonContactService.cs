@@ -28,6 +28,7 @@ namespace FytIms.Service.Implements
             var res = new ApiResult<string>();
             try
             {
+                parm.IsUrgent = string.IsNullOrEmpty(parm.IsUrgentStr) ? false : true;
                 var newGuid = Guid.NewGuid().ToString();
                 var model = new SysPersonContact()
                 {

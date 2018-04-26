@@ -1,6 +1,7 @@
 ﻿@page
-@model FytIms.Pages.LoginModel
+@model FytIms.Pages.IndexModel
 @{
+    ViewData["Title"] = "Index";
     Layout = null;
 }
 
@@ -29,13 +30,13 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label"><i class="layui-icon"></i></label>
                     <div class="layui-input-block">
-                        <input type="text" name="loginname" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入账号" class="layui-input">
+                        <input type="text" id="loginname" name="loginname" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入账号" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label"><i class="layui-icon"></i></label>
                     <div class="layui-input-block">
-                        <input type="password" name="loginpwd" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入密码" class="layui-input">
+                        <input type="password" id="loginpwd" name="loginpwd" lay-verify="required" lay-verType="tips" autocomplete="off" placeholder="请输入密码" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">

@@ -33,16 +33,17 @@
                 , url: '/api/person/getpages'
                 , cols: [[
                     { type: 'checkbox', fixed: 'left' }
-                    , { field: 'loginName', width: 100, title: '用户名' }
-                    , { field: 'trueName', width: 80, title: '姓名', sort: true }
-                    , { field: 'sex', width: 80, title: '性别' }
+                    , { field: 'loginName', width: 120, title: '用户名' }
+                    , { field: 'trueName', width: 120, title: '姓名', sort: true }
+                    , { field: 'sex', width: 100, title: '性别' }
                     , { field: 'companyName', title: '所属公司' }
-                    , { field: 'departmentName', width: 150, title: '所属部门' }
-                    , { field: 'mobile', width: 150, title: '联系电话' }
-                    , { field: 'email', width: 200, title: '邮箱' }
-                    , { width: 120, title: '操作', fixed: 'right', toolbar: '#tool' }
+                    , { field: 'departmentName', width: 180, title: '所属部门' }
+                    , { field: 'mobile', width: 180, title: '联系电话' }
+                    , { field: 'email', width: 220, title: '邮箱' }
+                    , { width: 160, title: '操作', fixed: 'right', toolbar: '#tool' }
                 ]]
                 , page: true,
+                limit:20,
                 id: 'tables'
             });
             //监听工具条

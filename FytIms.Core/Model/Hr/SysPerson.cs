@@ -64,6 +64,11 @@ namespace FytIms.Core.Model.Hr
         public string TrueName { get; set; }
 
         /// <summary>
+        /// 首字母
+        /// </summary>
+        public string Letter { get; set; }
+
+        /// <summary>
         /// Desc:员工编号
         /// Default:
         /// Nullable:False

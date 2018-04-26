@@ -58,6 +58,7 @@
 /*地区下拉优化*/
 .city-picker-span > .placeholder{padding-left:10px; color:#777;}
 .city-picker-dropdown{width:450px !important; left:1px !important;}
+.city-picker-span{overflow:hidden;}
 
 /* 头像  图片上传 */
 .addpic-list .text{ height: 26px; line-height: 26px;color: #76838f;}

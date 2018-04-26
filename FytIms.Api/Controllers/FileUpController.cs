@@ -15,36 +15,34 @@ namespace FytIms.Api.Controllers
     [Route("api/FileUp")]
     public class FileUpController : Controller
     {
-        private readonly IHostingEnvironment _hostingEnvironment;
-        public FileUpController(IHostingEnvironment hostingEnvironment)
-        {
-            _hostingEnvironment = hostingEnvironment;
-        }
         /// <summary>
         /// 上传头像
         /// </summary>
         /// <returns></returns>
         [HttpPost("upheadpic")]
-        public ApiResult<string> FileUpHead()
+        public ApiResult<string> FileUpHead([FromServices]IHostingEnvironment environment)
         {
             var res = new ApiResult<string>();
             var files = Request.Form.Files[0];
             if (files != null)
             {
-                string webRootPath = _hostingEnvironment.WebRootPath;
+                string webRootPath = environment.WebRootPath;
                 //文件上传到本地
                 var fext = FileHelper.GetFileExt(files.FileName);
                 var newFileName = Guid.NewGuid().ToString() + "." + fext;
                 var newFilePath = webRootPath + "/themes/img/headpic/";
-                var filePath = webRootPath + "/themes/img/headpic/" + newFileName;
+
+                string strpath = Path.Combine(newFilePath, newFileName);
+                string path = Path.Combine(webRootPath, strpath);
                 //判断是否有文件
                 if (!FileHelper.IsExistDirectory(newFilePath))
                 {
                     FileHelper.CreateFiles(newFilePath);
                 }
-                using (var stream = new FileStream(filePath, FileMode.Create))
+                using (var stream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.ReadWrite))
                 {
-                    files.CopyToAsync(stream);
+                    files.CopyTo(stream);
+                    stream.Flush();
                 }
                 res.data = "/themes/img/headpic/" + newFileName;
                 res.success = true;

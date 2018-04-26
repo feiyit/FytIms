@@ -41,9 +41,9 @@
                     </div>
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label">姓名</label>
+                            <label class="layui-form-label">员工姓名</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="TrueName" lay-verify="required" lay-verType="tips" maxlength="20" autocomplete="off" placeholder="请输入标题" class="layui-input" value="@Model.Person.TrueName">
+                                <input type="text" id="TrueName" name="TrueName" lay-verify="required" lay-verType="tips" maxlength="20" autocomplete="off" placeholder="请输入标题" class="layui-input" value="@Model.Person.TrueName">
                             </div>
                         </div>
                         <div class="layui-inline">
@@ -108,7 +108,7 @@
                         <div class="layui-inline">
                             <label class="layui-form-label">邮箱</label>
                             <div class="layui-input-inline">
-                                <input type="email" name="Email" lay-verify="email" value="@Model.Person.Email" lay-verType="tips" maxlength="30" autocomplete="off" placeholder="请输入邮箱" class="layui-input">
+                                <input type="email" name="Email" value="@Model.Person.Email" maxlength="30" autocomplete="off" placeholder="非必填项" class="layui-input">
                             </div>
                         </div>
                     </div>
@@ -157,44 +157,40 @@
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <div class="layui-inline">
-                            <label class="layui-form-label">籍贯</label>
-                            <div class="layui-input-inline">
-                                <input type="text" id="NativePlaceCity" name="NativePlaceCity" autocomplete="off" maxlength="50" placeholder="非必填项" class="layui-input" value="@Model.Person.NativePlaceCity">
-                            </div>
-                        </div>
-                        <div class="layui-inline">
-                            <label class="layui-form-label">户口所在地</label>
-                            <div class="layui-input-inline">
-                                <input type="text" id="AccountCity" name="AccountCity" autocomplete="off" placeholder="非必填项" maxlength="60" class="layui-input" value="@Model.Person.AccountCity">
-                            </div>
+                        <label class="layui-form-label">籍贯</label>
+                        <div class="layui-input-block" style="width:41.5%;">
+                            <input type="text" id="NativePlaceCity" name="NativePlaceCity" autocomplete="off" maxlength="50" placeholder="非必填项" class="layui-input" value="@Model.Person.NativePlaceCity">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <div class="layui-inline">
-                            <label class="layui-form-label">居住地址</label>
-                            <div class="layui-input-inline">
-                                <input type="text" id="LiveCity" name="LiveCity" autocomplete="off" placeholder="非必填项" maxlength="60" class="layui-input" value="@Model.Person.LiveCity">
-                            </div>
+                        <label class="layui-form-label">户口所在地</label>
+                        <div class="layui-input-block" style="width:41.5%;">
+                            <input type="text" id="AccountCity" name="AccountCity" autocomplete="off" placeholder="非必填项" maxlength="60" class="layui-input" value="@Model.Person.AccountCity">
                         </div>
-                        <div class="layui-inline">
-                            <label class="layui-form-label">政治面貌</label>
-                            <div class="layui-input-inline">
-                                <select name="PoliticalStatus" lay-verify="required" lay-search="">
-                                    @foreach (var item in Model.codeList.Where(m => m.parentguid == "21576fef-1a5b-4af8-a394-ec5166b4a8e4"))
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">居住地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" id="LiveCity" name="LiveCity" autocomplete="off" style="width:45.8%;" placeholder="非必填项" maxlength="60" class="layui-input" value="@Model.Person.LiveCity">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">政治面貌</label>
+                        <div class="layui-input-block" style="width:41.8%;">
+                            <select name="PoliticalStatus" lay-verify="required" lay-search="">
+                                @foreach (var item in Model.codeList.Where(m => m.parentguid == "21576fef-1a5b-4af8-a394-ec5166b4a8e4"))
+                                {
+                                    if (Model.Person.PoliticalStatus == item.name)
                                     {
-                                        if (Model.Person.PoliticalStatus == item.name)
-                                        {
-                                            <option value="@item.name" selected="selected">@item.name</option>
-                                        }
-                                        else
-                                        {
-                                            <option value="@item.name">@item.name</option>
-
-                                        }
+                                        <option value="@item.name" selected="selected">@item.name</option>
                                     }
-                                </select>
-                            </div>
+                                    else
+                                    {
+                                        <option value="@item.name">@item.name</option>
+
+                                    }
+                                }
+                            </select>
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -218,7 +214,7 @@
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-label">信仰</label>
+                            <label class="layui-form-label">宗教信仰</label>
                             <div class="layui-input-inline">
                                 <select name="Faith" lay-search="">
                                     @foreach (var item in Model.codeList.Where(m => m.parentguid == "36eefb08-1a44-4989-b4dc-e7be65e32349"))
@@ -239,7 +235,7 @@
                     </div>
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label">婚姻</label>
+                            <label class="layui-form-label">婚姻状况</label>
                             <div class="layui-input-inline">
                                 <select name="Marriage" lay-verify="required" lay-search="">
                                     @foreach (var item in Model.codeList.Where(m => m.parentguid == "2128dd06-6414-44e4-ae83-502f58d886d2"))
@@ -258,7 +254,7 @@
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label class="layui-form-label">学历</label>
+                            <label class="layui-form-label">最高学历</label>
                             <div class="layui-input-inline">
                                 <select name="Education" lay-search="">
                                     @foreach (var item in Model.codeList.Where(m => m.parentguid == "b3767d9d-2ecc-48c5-b56d-d9af628c0c63"))
@@ -329,13 +325,15 @@
     </div>
     <input id="guid" name="Guid" type="hidden" value="@Model.Person.Guid" />
     <input name="LoginOldPwd" type="hidden" value="@Model.Person.LoginPwd" />
+    <input id="letter" name="Letter" type="hidden" value="@Model.Person.Letter" />
 </form>
 <script type="text/html" id="switchTpl">
     <input type="checkbox" name="IsUrgent" value="{{d.guid}}" lay-skin="switch" lay-text="ON|OFF" {{ d.isUrgent?'checked':''}}>
 </script>
 @section Scripts{
+    <script type="text/javascript" src="~/themes/js/pinying.js"></script>
     <script>
-        var $city = $('#NativePlaceCity,#AccountCity,#LiveCity');
+        var $city = $('#NativePlaceCity,#AccountCity');
         $city.citypicker({
             province: '',
             city: '',
@@ -349,12 +347,20 @@
                     laydate = layui.laydate,
                     upload = layui.upload;
 
-                /*laydate.render({
+                laydate.render({
                     elem: '#Birthday'
-                });*/
+                });
+
+                $("#TrueName").keyup(function () { 
+                    var str = $(this).val();
+                    if (str == "") return;                    var res = makePy(str); console.log(res);
+                    $("#letter").val(res);
+                });
 
                 if ($("#guid").val()) {
                     $("#LoginPwd").val("111111");
+                } else {
+                    $("#LoginPwd").val("123132");
                 }
                 upload.render({
                     elem: '#selA'
@@ -389,10 +395,14 @@
                     if (isOption) {
                         urls = "api/person/edit"
                     }
+                    //console.log(data.field); return false;
                     os.ajax(urls, data.field, function (res) {
                         if (res.statusCode === 200) {
                             $("#guid").val(res.data);
                             os.toastr('ok', '保存成功~');
+                            layer.confirm('是否要返回到列表，选择"取消"您可以继续添加联系人/工作经历/教育经历', function (index) {
+                                window.location.href = '/oa/person/index';
+                            });
                         } else {
                             os.toastr('error', res.message);
                         }
@@ -472,7 +482,7 @@
                         [
                             { field: 'educateType', width: 150, title: '院校类型', fixed: 'left' },
                             { field: 'admissionTime', width: 150, title: '入学时间', templet:"<span>{{DataFormat(d.admissionTime,'yyyy-MM-dd')}}</span>" },
-                            { field: 'graduateTime', width: 150, title: '毕业时间', templet: "<span>{{DataFormat(d.admissionTime,'yyyy-MM-dd')}}</span>" },                            
+                            { field: 'graduateTime', width: 150, title: '毕业时间', templet: "<span>{{DataFormat(d.admissionTime,'yyyy-MM-dd')}}</span>" },
                             { field: 'specialty', width: 200, title: '专业' },
                             { field: 'schoolName', title: '院校名称' },
                             { width: 200, title: '操作', fixed: 'right', toolbar: '#educatetool' }
@@ -531,7 +541,7 @@
                             table.reload('tabwork');
                         });
                     } else if (obj.event === "del") {
-                        layer.confirm('确定要删除 ' + data.PostName + ' 吗？', function (index) {
+                        layer.confirm('确定要删除 ' + data.postName + ' 吗？', function (index) {
                             layer.close(index);
                             os.ajax('api/person/delwork/', { guid: data.guid }, function (res) {
                                 if (res.statusCode === 200) {

@@ -3,10 +3,13 @@ E:\2018Project\美亚集团IMS\FytIms\FytIms
 --application-name=FytIms
 --content-root=E:\2018Project\美亚集团IMS\FytIms\FytIms
 --file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\Error.cshtml
---file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\Login.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\Index.cshtml
 --file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\index.cshtml
 --file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Person\Index.cshtml
 --file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Person\Modify.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Person\ModifyContact.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Person\ModifyEducate.cshtml
+--file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Person\ModifyWork.cshtml
 --file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Sys\Codes.cshtml
 --file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Sys\CodesModify.cshtml
 --file=E:\2018Project\美亚集团IMS\FytIms\FytIms\Pages\OA\Sys\CodesValModify.cshtml

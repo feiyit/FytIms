@@ -1,20 +1,29 @@
 ﻿layui.use(['form', 'layedit'], function () {
     var form = layui.form
         , layer = layui.layer;
-    os.ajax("api/Person/getlist", {Guid:'aaaaaaaaaa'}, function (res) {
-        console.log(res);
-    });
     //监听提交
     form.on('submit(loginsub)', function (data) {
+        toastr.clear();
+        toastr.options = { positionClass: 'toast-top-center' };
         var code = $("#hcode").val(), okcode = $("#code").val();
-        if (code != okcode) {
-            toastr.clear();
-            toastr.options = { positionClass: 'toast-top-center' };
+        if (code != okcode) {            
             toastr.warning("需要滑动完成验证~");
             return false;
         }
-        layer.msg(JSON.stringify(data.field));
-        window.location.href = "/";
+        var loginname = $("#loginname").val(), loginpwd = $("#loginpwd").val();
+        if (!loginname) {
+            toastr.error("请输入账号~"); return false;
+        }
+        if (!loginpwd) {
+            toastr.error("请输入密码~"); return false;
+        }
+        if (loginname!='admins') {
+            toastr.error("账号输入错误~"); return false;
+        }        
+        if (loginpwd != '123') {
+            toastr.error("密码输入错误~"); return false;
+        }
+        window.location.href = "/oa/index/";
         return false;
     });
 });

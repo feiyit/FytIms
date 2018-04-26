@@ -15,6 +15,12 @@ namespace FytIms.Service.Interfaces
     public interface ISysPersonService
     {
         /// <summary>
+        /// 查询员工信息，提供APP使用
+        /// </summary>
+        /// <returns></returns>
+        Task<ApiResult<List<SysPersonAppDto>>> GetAppPersonList();
+
+        /// <summary>
         /// 查询员工列表
         /// </summary>
         /// <returns></returns>

@@ -4,6 +4,24 @@ using System.Text;
 
 namespace FytIms.Service.Model.DtoModel
 {
+    /// <summary>
+    /// APP返回的对象
+    /// </summary>
+    public class SysPersonAppDto
+    {
+        public string headpic { get; set; }
+        public string letter { get; set; }
+        public string truename { get; set; }
+        public string tel { get; set; }
+        public string mobile { get; set; }
+        public string weixin { get; set; }
+        public string email { get; set; }
+        public string sex { get; set; }
+        public string companyname { get; set; }
+        public string postName { get; set; }
+        public int type { get; set; }
+    }
+
     public class SysPersonModel
     {
         public string guid { get; set; }
@@ -71,6 +89,11 @@ namespace FytIms.Service.Model.DtoModel
         /// Nullable:False
         /// </summary>           
         public string TrueName { get; set; }
+
+        /// <summary>
+        /// 首字母
+        /// </summary>
+        public string Letter { get; set; }
 
         /// <summary>
         /// Desc:员工编号

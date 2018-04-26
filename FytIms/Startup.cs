@@ -30,6 +30,12 @@ namespace FytIms
             services.AddTransient<ISysPersonEducateService, SysPersonEducateService>();
             services.AddTransient<ISysPersonWorkService, SysPersonWorkService>();
             services.AddMvc();
+
+            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,10 +50,18 @@ namespace FytIms
             {
                 app.UseExceptionHandler("/Error");
             }
+            app.UseCors("AllowAll");
 
             app.UseStaticFiles();
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "Default",
+                    template: "{controller}/{action}/{id?}",
+                    defaults: new { controller = "Home", action = "Index" }
+                );
+            });
         }
     }
 }

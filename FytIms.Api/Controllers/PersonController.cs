@@ -37,6 +37,17 @@ namespace FytIms.Api.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
+        [HttpPost("list")]
+        public async Task<ApiResult<List<SysPersonAppDto>>> GetAppPersonList()
+        {
+            return await _sysPersonService.GetAppPersonList();
+        }
+
+        /// <summary>
+        /// 查询列表
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpGet("getpages")]
         public async Task<JsonResult> GetPages(SysPersonPost request)
         {

@@ -12,14 +12,78 @@ using FytIms.Service.Interfaces;
 using FytIms.Service.Model.DtoModel;
 using FytIms.Service.Model.PostModel;
 using SqlSugar;
+using System.Linq;
 
 namespace FytIms.Service.Implements
 {
     /// <summary>
     /// 员工业务实现
     /// </summary>
-    public class SysPersonService:DbContext,ISysPersonService
+    public class SysPersonService : DbContext, ISysPersonService
     {
+        /// <summary>
+        /// 查询员工信息，提供APP使用
+        /// </summary>
+        /// <param name="parm"></param>
+        /// <returns></returns>
+        public async Task<ApiResult<List<SysPersonAppDto>>> GetAppPersonList()
+        {
+            var res = new ApiResult<List<SysPersonAppDto>>();
+            try
+            {
+                var query = Db.Queryable<SysPerson>()
+                        //.Where(m => m.PostStatus)
+                        .OrderBy(m => m.Letter).Select(m => new SysPersonAppDto()
+                        {
+                            headpic = m.HeadPic,
+                            letter = m.Letter,
+                            truename = m.TrueName,
+                            tel = m.WorkTel,
+                            weixin = m.WebXin,
+                            companyname = SqlFunc.Subqueryable<SysCompany>().Where(s => s.Guid == m.CompayGuid).Select(s => s.Name),
+                            postName = SqlFunc.Subqueryable<SysDepartment>().Where(s => s.Guid == m.DepartmentGuid).Select(s => s.Name),
+                            sex = m.Sex,
+                            mobile = m.Mobile,
+                            email = m.Email
+                        });
+                var list = query.ToList();
+                var resList = new List<SysPersonAppDto>();
+                var strList = new List<string>();
+                //根据首字母分组，赋值给新的集合
+                foreach (var item in list.GroupBy(m => m.letter.Substring(0,1)).ToList())
+                {
+                    if (!string.IsNullOrEmpty(item.Key))
+                    {
+                        strList.Add(item.Key.Substring(0, 1));
+                    }
+                }
+                //循环新的集合依次赋值
+                foreach (var item in strList)
+                {
+                    resList.Add(new SysPersonAppDto()
+                    {
+                        letter = item,
+                        type = 1
+                    });
+                    //根据首字母查询赋值给新的集合
+                    foreach (var row in list.Where(m => m.letter.StartsWith(item)).ToList())
+                    {
+                        row.type = 0;
+                        resList.Add(row);
+                    }
+                }
+                res.success = true;
+                res.message = "获取成功！";
+                res.data = resList;
+            }
+            catch (Exception ex)
+            {
+                res.message = ApiEnum.Error.GetEnumText() + ex.Message;
+                res.statusCode = (int)ApiEnum.Error;
+            }
+            return await Task.Run(() => res);
+        }
+
         /// <summary>
         /// 添加员工基本信息
         /// </summary>
@@ -33,6 +97,12 @@ namespace FytIms.Service.Implements
                 parm.HeadPic = !string.IsNullOrEmpty(parm.HeadPic) ? parm.HeadPic : "/themes/img/headpic.png";
                 parm.LoginPwd = DESCrypt.Encrypt(parm.LoginPwd);
                 var newGuid = Guid.NewGuid().ToString();
+                parm.LoginStatus = string.IsNullOrEmpty(parm.LoginStr) ? false : true;
+                parm.PostStatus = string.IsNullOrEmpty(parm.PostStr) ? false : true;
+                if (parm.LanguageSkillsStr?.Length > 0)
+                {
+                    parm.LanguageSkills = string.Join(',', parm.LanguageSkillsStr);
+                }
                 var model = new SysPerson()
                 {
                     Guid = newGuid,
@@ -43,6 +113,7 @@ namespace FytIms.Service.Implements
                     LoginPwd = parm.LoginPwd,
                     TrueName = parm.TrueName,
                     Codes = parm.Codes,
+                    Letter = parm.Letter,
                     HeadPic = parm.HeadPic,
                     Sex = parm.Sex,
                     Mobile = parm.Mobile,
@@ -66,20 +137,20 @@ namespace FytIms.Service.Implements
                     Education = parm.Education,
                     Hobbies = parm.Hobbies,
                     LanguageSkills = parm.LanguageSkills,
-                    Specialty=parm.Specialty,
+                    Specialty = parm.Specialty,
                     AddTime = DateTime.Now,
                     EditTime = DateTime.Now
                 };
                 var isok = SysPersonDb.Insert(model);
                 res.statusCode = isok ? (int)ApiEnum.Status : (int)ApiEnum.Error;
-                res.data = newGuid;     
+                res.data = newGuid;
             }
             catch (Exception ex)
             {
                 res.message = ApiEnum.Error.GetEnumText() + ex.Message;
                 res.statusCode = (int)ApiEnum.Error;
                 res.success = false;
-            }            
+            }
             return await Task.Run(() => res);
         }
 
@@ -115,37 +186,38 @@ namespace FytIms.Service.Implements
                 data = model != null ? new SysPersonDto()
                 {
                     Guid = model.Guid,
-                    RoleGuid=model.RoleGuid,
-                    DepartmentGuid=model.DepartmentGuid,
-                    CompayGuid=model.CompayGuid,
-                    LoginPwd=model.LoginPwd,
+                    RoleGuid = model.RoleGuid,
+                    DepartmentGuid = model.DepartmentGuid,
+                    CompayGuid = model.CompayGuid,
+                    LoginPwd = model.LoginPwd,
                     LoginName = model.LoginName,
                     TrueName = model.TrueName,
+                    Letter = model.Letter,
                     Codes = model.Codes,
                     HeadPic = model.HeadPic,
-                    Sex=model.Sex,
-                    Mobile=model.Mobile,
-                    Email=model.Email,
-                    QQ=model.QQ,
-                    WebXin=model.WebXin,
-                    WorkTel=model.WorkTel,
-                    LoginStatus=model.LoginStatus,
-                    PostStatus=model.PostStatus,
-                    Birthday=model.Birthday,
-                    IDCard=model.IDCard,
-                    NativePlaceCity=model.NativePlaceCity,
-                    AccountCity=model.AccountCity,
-                    LiveCity=model.LiveCity,
-                    PoliticalStatus=model.PoliticalStatus,
-                    Ethnic=model.Ethnic,
-                    Faith=model.Faith,
-                    Marriage=model.Marriage,
-                    Education=model.Education,
-                    Hobbies=model.Hobbies,
-                    LanguageSkills=model.LanguageSkills,
-                    Specialty=model.Specialty
+                    Sex = model.Sex,
+                    Mobile = model.Mobile,
+                    Email = model.Email,
+                    QQ = model.QQ,
+                    WebXin = model.WebXin,
+                    WorkTel = model.WorkTel,
+                    LoginStatus = model.LoginStatus,
+                    PostStatus = model.PostStatus,
+                    Birthday = model.Birthday,
+                    IDCard = model.IDCard,
+                    NativePlaceCity = model.NativePlaceCity,
+                    AccountCity = model.AccountCity,
+                    LiveCity = model.LiveCity,
+                    PoliticalStatus = model.PoliticalStatus,
+                    Ethnic = model.Ethnic,
+                    Faith = model.Faith,
+                    Marriage = model.Marriage,
+                    Education = model.Education,
+                    Hobbies = model.Hobbies,
+                    LanguageSkills = model.LanguageSkills,
+                    Specialty = model.Specialty
                 } : null
-            };            
+            };
             return await Task.Run(() => res);
         }
 
@@ -159,7 +231,7 @@ namespace FytIms.Service.Implements
             try
             {
                 var query = Db.Queryable<SysPerson>()
-                        .WhereIF(!string.IsNullOrEmpty(parm.key), m => m.TrueName.Contains(parm.key) || m.LoginName.Contains(parm.key) || m.Mobile== parm.key || m.Email== parm.key)
+                        .WhereIF(!string.IsNullOrEmpty(parm.key), m => m.TrueName.Contains(parm.key) || m.LoginName.Contains(parm.key) || m.Mobile == parm.key || m.Email == parm.key)
                         .Where(m => m.PostStatus == parm.poststatus)
                         .OrderBy(m => m.EditTime, OrderByType.Desc).Select(m => new SysPersonModel()
                         {
@@ -167,8 +239,8 @@ namespace FytIms.Service.Implements
                             loginName = m.LoginName,
                             trueName = m.TrueName,
                             codes = m.Codes,
-                            companyName =SqlFunc.Subqueryable<SysCompany>().Where(s => s.Guid == m.CompayGuid).Select(s => s.Name),
-                            departmentName= SqlFunc.Subqueryable<SysDepartment>().Where(s => s.Guid == m.DepartmentGuid).Select(s => s.Name),
+                            companyName = SqlFunc.Subqueryable<SysCompany>().Where(s => s.Guid == m.CompayGuid).Select(s => s.Name),
+                            departmentName = SqlFunc.Subqueryable<SysDepartment>().Where(s => s.Guid == m.DepartmentGuid).Select(s => s.Name),
                             postName = "高级软件工程师",
                             sex = m.Sex,
                             mobile = m.Mobile,
@@ -198,11 +270,11 @@ namespace FytIms.Service.Implements
             {
                 parm.LoginStatus = string.IsNullOrEmpty(parm.LoginStr) ? false : true;
                 parm.PostStatus = string.IsNullOrEmpty(parm.PostStr) ? false : true;
-                if (parm.LanguageSkillsStr.Length>0)
+                if (parm.LanguageSkillsStr?.Length > 0)
                 {
                     parm.LanguageSkills = string.Join(',', parm.LanguageSkillsStr);
                 }
-                if (parm.LoginPwd=="111111")
+                if (parm.LoginPwd == "111111")
                 {
                     parm.LoginPwd = parm.LoginOldPwd;
                 }
@@ -220,6 +292,7 @@ namespace FytIms.Service.Implements
                     LoginName = parm.LoginName,
                     LoginPwd = parm.LoginPwd,
                     TrueName = parm.TrueName,
+                    Letter = parm.Letter,
                     Codes = parm.Codes,
                     HeadPic = parm.HeadPic,
                     Sex = parm.Sex,
@@ -229,7 +302,7 @@ namespace FytIms.Service.Implements
                     WebXin = parm.WebXin,
                     WorkTel = parm.WorkTel,
                     LoginStatus = parm.LoginStatus,
-                    PostStatus =parm.PostStatus,
+                    PostStatus = parm.PostStatus,
                     Birthday = parm.Birthday,
                     IDCard = parm.IDCard,
                     NativePlaceCity = parm.NativePlaceCity,
@@ -247,7 +320,7 @@ namespace FytIms.Service.Implements
                 }, m => m.Guid == parm.Guid);
                 res.success = isok;
                 res.statusCode = isok ? (int)ApiEnum.Status : (int)ApiEnum.Error;
-                res.data = isok ? "1" : "0";
+                res.data = parm.Guid;
             }
             catch (Exception ex)
             {
